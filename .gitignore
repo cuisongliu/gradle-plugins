@@ -1,4 +1,11 @@
-.gradle
+# IDEA #
+.idea/
+*.iml
+out/
+
+# Gradle #
+.gradle/
+mybatis-generator/build
 build/
 
 # Ignore Gradle GUI config
@@ -11,4 +18,14 @@ gradle-app.setting
 .gradletasknamecache
 
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
-# gradle/wrapper/gradle-wrapper.properties
+gradle/wrapper/gradle-wrapper.properties
+gradle/wrapper/gradle-wrapper.jar
+
+
+# Eclipse #
+.settings/
+.classpath
+.project
+
+# jrebel #
+src/main/resources/rebel.xml
