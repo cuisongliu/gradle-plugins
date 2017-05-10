@@ -1,5 +1,3 @@
-package com.cuisongliu.plugin.generator.mybatis.extension
-
 /*
  * The MIT License (MIT)
  *
@@ -23,9 +21,38 @@ package com.cuisongliu.plugin.generator.mybatis.extension
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+package com.cuisongliu.plugin.generator.mybatis.extension
+/**
+ * <p>ProjectName: gradle-plugin</p>
+ * <p>Package: com.cuisongliu.plugin.generator.mybatis.extension</p>
+ * <p>ClassName: MybatisGeneratorJdbcExtension.groovy</p>
+ * <p>Description: gradle mybatis generator plugin jdbc配置参数</p>
+ * <p>Copyright (c) 2017 cuisongliu@qq.com</p>
+ * @author cuisongliu
+ * @version 1.0 创建时间：2017年5月10日 20:06:20
+ */
 class MybatisGeneratorJdbcExtension {
+    /**
+     * jdbc的驱动类<br>
+     * 默认为null,需要设置,否则执行报错
+     */
     String driver = null
+
+    /**
+     * jdbc的数据库url<br>
+     * 默认为null,需要设置,否则执行报错
+     */
     String url = null
+
+    /**
+     * jdbc的数据库用户名<br>
+     * 默认为root
+     */
     String username = "root"
+
+    /**
+     * jdbc的数据库密码<br>
+     * 默认为null,需要设置,否则执行报错
+     */
     String password = null
 }

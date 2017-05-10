@@ -1,13 +1,3 @@
-package com.cuisongliu.plugin.generator.mybatis
-
-import com.alibaba.druid.pool.DruidDataSource
-import org.gradle.api.GradleException
-import org.gradle.api.logging.Logger
-import org.mybatis.generator.internal.util.StringUtility
-import org.slf4j.LoggerFactory
-
-import java.sql.Connection
-import java.sql.Statement
 /*
  * The MIT License (MIT)
  *
@@ -31,13 +21,31 @@ import java.sql.Statement
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-class SqlScriptRunner{
+package com.cuisongliu.plugin.generator.mybatis
+
+import com.alibaba.druid.pool.DruidDataSource
+import org.gradle.api.GradleException
+import org.mybatis.generator.internal.util.StringUtility
+
+import java.sql.Connection
+import java.sql.Statement
+
+/**
+ * <p>ProjectName: gradle-plugin</p>
+ * <p>Package: com.cuisongliu.plugin.generator.mybatis</p>
+ * <p>ClassName: GradleProgressCallback.groovy</p>
+ * <p>Description: This class is jdbc running of sqlScript  file implementation.</p>
+ * <p>Copyright (c) 2017 cuisongliu@qq.com</p>
+ * @author cuisongliu
+ * @version 1.0 创建时间：2017年5月10日 20:06:20
+ */
+class SqlScriptRunner {
     private String url
     private String username
     private String password
     private String sqlScript
-    Logger logger = LoggerFactory.getLogger(SqlScriptRunner.class)
-    SqlScriptRunner(String sqlScript,String url, String username, String password) {
+
+    SqlScriptRunner(String sqlScript, String url, String username, String password) {
         this.url = url
         this.username = username
         this.password = password
@@ -66,11 +74,11 @@ class SqlScriptRunner{
                 statement.executeUpdate(execSql)
             }
             br.close()
-            if(statement!=null)
+            if (statement != null)
                 statement.close()
             con.commit()
         } catch (Exception e) {
-            if (con!=null)
+            if (con != null)
                 con.rollback()
             throw new GradleException(e.getMessage());
         } finally {

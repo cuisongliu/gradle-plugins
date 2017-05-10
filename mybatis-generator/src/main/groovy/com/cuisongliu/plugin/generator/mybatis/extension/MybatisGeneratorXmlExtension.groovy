@@ -1,6 +1,3 @@
-package com.cuisongliu.plugin.generator.mybatis.extension
-
-import org.mybatis.generator.api.PluginAdapter
 /*
  * The MIT License (MIT)
  *
@@ -24,13 +21,47 @@ import org.mybatis.generator.api.PluginAdapter
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+package com.cuisongliu.plugin.generator.mybatis.extension
+
+import org.mybatis.generator.api.PluginAdapter
+
+/**
+ * <p>ProjectName: gradle-plugin</p>
+ * <p>Package: com.cuisongliu.plugin.generator.mybatis.extension</p>
+ * <p>ClassName: MybatisGeneratorJdbcExtension.groovy</p>
+ * <p>Description: gradle mybatis generator plugin xml需要的配置参数</p>
+ * <p>Copyright (c) 2017 cuisongliu@qq.com</p>
+ * @author cuisongliu
+ * @version 1.0 创建时间：2017年5月10日 20:06:20
+ */
 class MybatisGeneratorXmlExtension {
-    //插件信息
+    /**
+     * 插件信息,xml中插件的类名,继承自<code>org.mybatis.generator.api.PluginAdapter</code><br/>
+     * 默认值为tk.mybatis.mapper.generator.MapperPlugin.class
+     */
     Class<? extends PluginAdapter> mapperPlugin = tk.mybatis.mapper.generator.MapperPlugin.class
+
+    /**
+     * mapper配置,生成的Mapper方法的父类<br/>
+     * 默认值为tk.mybatis.mapper.common.Mapper
+     */
     String mapperMapper = "tk.mybatis.mapper.common.Mapper"
 
+    /**
+     * mapper配置,生成的Mapper(dao)所在的包所在的位置<br/>
+     * 默认值为null 需要设置,否则会报错
+     */
     String mapperPackage = null
-    String modelPackage = null
-    String xmlPackage = null
 
+    /**
+     * model配置,生成的实体类所在的包所在的位置<br/>
+     * 默认值为null 需要设置,否则会报错
+     */
+    String modelPackage = null
+
+    /**
+     * mapper的xml配置,生成的mapper的xml所在的包的位置<br/>
+     * 默认值为null 需要设置,否则会报错
+     */
+    String xmlPackage = null
 }

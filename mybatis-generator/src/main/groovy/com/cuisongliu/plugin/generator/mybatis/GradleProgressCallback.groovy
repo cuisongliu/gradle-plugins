@@ -1,7 +1,3 @@
-package com.cuisongliu.plugin.generator.mybatis
-
-import org.gradle.api.logging.Logger
-import org.mybatis.generator.internal.NullProgressCallback
 /*
  * The MIT License (MIT)
  *
@@ -25,23 +21,33 @@ import org.mybatis.generator.internal.NullProgressCallback
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-class GradleProgressCallback extends NullProgressCallback {
-    private Logger log;
-    private boolean verbose;
+package com.cuisongliu.plugin.generator.mybatis
 
+import org.mybatis.generator.internal.NullProgressCallback
+/**
+ * <p>ProjectName: gradle-plugin</p>
+ * <p>Package: com.cuisongliu.plugin.generator.mybatis</p>
+ * <p>ClassName: GradleProgressCallback.groovy</p>
+ * <p>Description: This class implements a progress callback that does nothing. It is used when the client passes in a null for the ProgressCallback.</p>
+ * <p>Copyright (c) 2017 cuisongliu@qq.com</p>
+ * @author cuisongliu
+ * @version 1.0 创建时间：2017年5月10日 20:06:20
+ */
+class GradleProgressCallback extends NullProgressCallback {
     /**
-     *
+     *  是否需要console输出
      */
-    GradleProgressCallback(Logger log, boolean verbose) {
+    private boolean console
+
+    GradleProgressCallback(boolean console) {
         super
-        this.log = log;
-        this.verbose = verbose;
+        this.console = console;
     }
 
     @Override
     void startTask(String subTaskName) {
-        if (verbose) {
-            log.info(subTaskName);
+        if (console) {
+            println(subTaskName);
         }
     }
 }

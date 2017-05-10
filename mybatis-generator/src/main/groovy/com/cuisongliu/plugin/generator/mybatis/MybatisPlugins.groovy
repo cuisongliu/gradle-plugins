@@ -1,10 +1,3 @@
-package com.cuisongliu.plugin.generator.mybatis
-
-import com.cuisongliu.plugin.generator.mybatis.extension.MybatisGeneratorExtension
-import com.cuisongliu.plugin.generator.mybatis.extension.MybatisGeneratorJdbcExtension
-import com.cuisongliu.plugin.generator.mybatis.extension.MybatisGeneratorXmlExtension
-import org.gradle.api.Plugin
-import org.gradle.api.Project
 /*
  * The MIT License (MIT)
  *
@@ -28,8 +21,24 @@ import org.gradle.api.Project
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+package com.cuisongliu.plugin.generator.mybatis
+
+import com.cuisongliu.plugin.generator.mybatis.extension.MybatisGeneratorExtension
+import com.cuisongliu.plugin.generator.mybatis.extension.MybatisGeneratorJdbcExtension
+import com.cuisongliu.plugin.generator.mybatis.extension.MybatisGeneratorXmlExtension
+import org.gradle.api.Plugin
+import org.gradle.api.Project
+
+/**
+ * <p>ProjectName: gradle-plugin</p>
+ * <p>Package: com.cuisongliu.plugin.generator.mybatis</p>
+ * <p>ClassName: MybatisPlugins.groovy</p>
+ * <p>Description: This class implements a plugin for mybatis gradle plugin and config the "mbg" param object. </p>
+ * <p>Copyright (c) 2017 cuisongliu@qq.com</p>
+ * @author cuisongliu
+ * @version 1.0 创建时间：2017年5月10日 20:06:20
+ */
 class MybatisPlugins implements Plugin<Project> {
-    def generatorFile
 
     @Override
     void apply(Project project) {
@@ -37,8 +46,7 @@ class MybatisPlugins implements Plugin<Project> {
         project.mbg.extensions.create("jdbc", MybatisGeneratorJdbcExtension)
         project.mbg.extensions.create("xml", MybatisGeneratorXmlExtension)
 
-        project.task("mbg",type:MybatisGenerator)
+        project.task("mbg", type: MybatisGenerator)
     }
-
 
 }

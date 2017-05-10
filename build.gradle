@@ -123,24 +123,9 @@ subprojects {
         from sourceSets.main.allSource
     }
 
-//    javadoc {
-//        options{
-//            encoding "UTF-8"
-//            charSet 'UTF-8'
-//            author true
-//            version true
-//            title "${project.name}"
-//        }
-//    }
-
     groovydoc {
         docTitle  "${project.name}"
     }
-
-//    task javadocZip(type: Zip, dependsOn: javadoc) {
-//        classifier = 'javadoc'
-//        from javadoc.destinationDir
-//    }
 
     task groovydocZip(type: Zip, dependsOn: groovydoc) {
         classifier = 'groovydoc'
@@ -156,7 +141,6 @@ subprojects {
         publications {
             maven(MavenPublication) {
                 from components.java
-//                artifactId "comcom"
 
                 artifact sourcesJar
                 artifact groovydocZip
