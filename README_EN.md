@@ -8,7 +8,6 @@
     - [Add the plugin to you project](#add-mbg-to-project)
     - [Specify settings](#set-mbg-settings)
     - [Run the mbg task](#run-mbg-task)
-        - [Example](#example)
  
 
 
@@ -190,5 +189,76 @@ If no settings are provided, the plugin tries to use sensible defaults.
 </tbody></table>
 
 <h3 id="run-mbg-task">Run the mbg task</h3>
-
-<h4 id="example">Example</h4>
+1. 加入generatorConfig.xml到你的执行模块中去
+   ```
+   <?xml version="1.0" encoding="UTF-8"?>
+   
+   <!DOCTYPE generatorConfiguration
+     PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+     "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+   
+   <generatorConfiguration>
+   	<!-- mybatis-generator:generate -->
+   	<!--targetRuntime="MyBatis3"-->
+   	<context id="MysqlTables" targetRuntime="tk.mybatis.mapper.generator.TkMyBatis3Impl">
+   
+   		<!-- generator java file encoding -->
+   	    <property name="javaFileEncoding" value="UTF-8"/>
+   	    <!-- format java code-->
+   	    <property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter"/> 
+   	    <!-- format XML files -->
+   	    <property name="xmlFormatter" value="org.mybatis.generator.api.dom.DefaultXmlFormatter"/>
+   		<plugin type="${xml.mapperPlugin}">
+               <property name="mappers" value="${xml.mapperMapper}"/>
+   			<!-- caseSensitive default false，When the database table name is case sensitive，you can set this property to true -->
+   			<property name="caseSensitive" value="true"/>
+           </plugin>
+   		<!-- delete generator  notes-->
+   		<commentGenerator>
+   			<property name="suppressAllComments" value="true" />
+   			<property name="suppressDate" value="true" />
+   		</commentGenerator>
+   		<jdbcConnection driverClass="${jdbc.driver}"
+   			connectionURL="${jdbc.url}"
+   			userId="${jdbc.username}"
+   			password="${jdbc.password}" />
+   		
+   		<javaTypeResolver>
+   			<property name="forceBigDecimals" value="true" />
+   		</javaTypeResolver>
+   		
+   		<javaModelGenerator targetPackage="${xml.modelPackage}"
+   			targetProject="${xml.javaProject}">
+   			<property name="enableSubPackages" value="true" />
+   			<property name="trimStrings" value="true" />
+   		</javaModelGenerator>
+   
+   		<sqlMapGenerator 
+   			targetPackage="${xml.xmlPackage}"
+   			targetProject="${xml.resourcesProject}" >
+   			<property name="enableSubPackages" value="false" />
+   		</sqlMapGenerator>
+   		
+   		<javaClientGenerator 
+   			targetPackage="${xml.mapperPackage}"
+   			targetProject="${xml.javaProject}"
+   			type="XMLMAPPER" >
+   		
+   		</javaClientGenerator>
+   		<!-- set table info -->
+   		<table tableName="m_phone_log" domainObjectName="PhoneLog1" mapperName="{0}Dao"
+   			enableCountByExample="false" enableUpdateByExample="false"
+   			enableDeleteByExample="false" enableSelectByExample="false" modelType="flat">
+   			<property name="useActualColumnNames" value="false" />
+   			<generatedKey column="" sqlStatement="MySql" identity="true"/>
+   			<!--<generatedKey column="ID"-->
+   				<!--sqlStatement="SELECT LAST_INSERT_ID()" />-->
+   		</table>
+   	</context>
+   
+   </generatorConfiguration>
+   ```
+   Set the variable in the table information.
+   
+2. In the build.gradle file append [Specify settings](#set-mbg-settings)
+3. In the build.gradle directory execute ```gradle mbg ```
