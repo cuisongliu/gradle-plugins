@@ -31,14 +31,14 @@ groovydoc {
     docTitle "${project.name}"
 }
 
-task groovydocZip(type: Zip, dependsOn: groovydoc) {
+task groovydocJar(type: Jar, dependsOn: groovydoc) {
     classifier = 'groovydoc'
     from groovydoc.destinationDir
 }
 
 artifacts {
     archives sourcesJar
-    archives groovydocZip
+    archives groovydocJar
 }
 apply plugin: 'maven-publish'
 def pomConfig = {
@@ -66,7 +66,7 @@ publishing {
             from components.java
 
             artifact sourcesJar
-            artifact groovydocZip
+            artifact groovydocJar
 
             pom.withXml {
                 def root = asNode()

@@ -28,7 +28,7 @@ dependencies {
     compile "tk.mybatis:mapper:${mapperVersion}"
     compile "mysql:mysql-connector-java:5+"
 }
-
+version = '0.9'
 pluginBundle {
     website = "$projectLocation"
     vcsUrl = "$projectLocation"
@@ -39,7 +39,7 @@ pluginBundle {
             id = 'com.cuisongliu.plugin.mybatis-generator'
             description = 'mybatis generator gradle plugin'
             displayName = 'mybatis generator gradle plugin'
-            version = '1.0'
+            version = '0.9'
         }
     }
 }
