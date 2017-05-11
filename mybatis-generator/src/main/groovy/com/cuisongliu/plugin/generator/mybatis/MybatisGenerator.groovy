@@ -61,8 +61,8 @@ class MybatisGenerator extends DefaultTask {
         }
         //设置generatorConfig.xml的位置
         generatorFile = project.file(project.mbg.generatorFile)
-        javaProjectFile = project.file(project.mbg.javaProject)
-        resourcesProjectFile = project.file(project.mbg.resourcesProject)
+        javaProjectFile = project.file(project.mbg.xml.javaProject)
+        resourcesProjectFile = project.file(project.mbg.xml.resourcesProject)
         //验证
         validation(project)
         for (def param : xmlParams)
@@ -70,7 +70,6 @@ class MybatisGenerator extends DefaultTask {
         //sqlScript callback
         def sqlScriptRunner = new SqlScriptRunner(project.mbg.sqlScript, project.mbg.jdbc.url, project.mbg.jdbc.username, project.mbg.jdbc.password)
         sqlScriptRunner.execSqlScript()
-
         List<String> warnings = new ArrayList<String>();
         //tableNames变量的处理信息
         Set<String> fullyqualifiedTables = new HashSet<String>();
@@ -172,13 +171,13 @@ class MybatisGenerator extends DefaultTask {
             println("javaProject目录不存在:${javaProjectFile.getAbsolutePath()}");
             throw new FileNotFoundException(javaProjectFile.getAbsolutePath())
         }
-        xmlParams["javaProject"] = project.mbg.javaProject
+        xmlParams["xml.javaProject"] = project.mbg.xml.javaProject
 
         if (!resourcesProjectFile.exists()) {
             println("resourcesProject目录不存在:${resourcesProjectFile.getAbsolutePath()}");
             throw new FileNotFoundException(resourcesProjectFile.getAbsolutePath())
         }
-        xmlParams["resourcesProject"] = project.mbg.resourcesProject
+        xmlParams["xml.resourcesProject"] = project.mbg.xml.resourcesProject
 
         Class clazzPlugin = project.mbg.xml.mapperPlugin
         if (clazzPlugin == null) {
