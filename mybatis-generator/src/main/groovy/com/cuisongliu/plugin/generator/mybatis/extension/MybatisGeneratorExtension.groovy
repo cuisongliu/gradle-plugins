@@ -47,12 +47,6 @@ class MybatisGeneratorExtension {
     def generatorFile = "generatorConfig.xml"
 
     /**
-     * mbg的配置文件所在目录是否在src/main/resources中<br>
-     * 默认为 false
-     */
-    boolean isResourceFile = false
-
-    /**
      * 生成java文件所在的目录<br>
      * 默认为 src/main/java
      */
@@ -75,7 +69,7 @@ class MybatisGeneratorExtension {
      * 如果指定该参数，执行过程会输出到控制台。<br>
      * 默认为 false
      */
-    boolean console = false
+    boolean consoleable = false
 
     /**
      * 是否跳过生成代码的mbg的任务,若为true则中断任务.<br>

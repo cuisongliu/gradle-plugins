@@ -60,11 +60,7 @@ class MybatisGenerator extends DefaultTask {
             return;
         }
         //设置generatorConfig.xml的位置
-        if (!project.mbg.isResourceFile) {
-            generatorFile = project.file("${project.mbg.generatorFile}")
-        } else {
-            generatorFile = project.file("src/main/resources/${project.mbg.generatorFile}")
-        }
+        generatorFile = project.file("${project.mbg.generatorFile}")
         javaProjectFile = project.file(project.mbg.javaProject)
         resourcesProjectFile = project.file(project.mbg.resourcesProject)
         //验证
@@ -89,7 +85,7 @@ class MybatisGenerator extends DefaultTask {
             MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config,
                     new DefaultShellCallback(project.mbg.overwrite), warnings);
 
-            myBatisGenerator.generate(new GradleProgressCallback(project.mbg.console), contextsToRun, fullyqualifiedTables);
+            myBatisGenerator.generate(new GradleProgressCallback(project.mbg.consoleable), contextsToRun, fullyqualifiedTables);
         } catch (Exception e) {
             throw new GradleException(e.getMessage());
         }

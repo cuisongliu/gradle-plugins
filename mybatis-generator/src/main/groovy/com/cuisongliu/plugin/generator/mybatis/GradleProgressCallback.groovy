@@ -37,16 +37,16 @@ class GradleProgressCallback extends NullProgressCallback {
     /**
      *  是否需要console输出
      */
-    private boolean console
+    private boolean consoleable
 
-    GradleProgressCallback(boolean console) {
+    GradleProgressCallback(boolean consoleable) {
         super
-        this.console = console;
+        this.consoleable = consoleable;
     }
 
     @Override
     void startTask(String subTaskName) {
-        if (console) {
+        if (consoleable) {
             println(subTaskName);
         }
     }
