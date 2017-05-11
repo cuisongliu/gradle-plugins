@@ -22,4 +22,24 @@
  * THE SOFTWARE.
  */
 
-apply from: "$rootDir/gradle/subprojects/plugins/mybatis-generator.gradle"
+subprojects {
+
+    apply from: "$rootDir/gradle/subprojects/plugins.gradle"
+    apply from: "$rootDir/gradle/subprojects/compile.gradle"
+    apply from: "$rootDir/gradle/subprojects/ext.gradle"
+    apply from: "$rootDir/gradle/subprojects/pack.gradle"
+
+    dependencies {
+        //gradle sdk
+        compile gradleApi()
+        compile localGroovy()
+        testCompile "junit:junit:4.12"
+    }
+    // JVM 版本号要求
+    sourceCompatibility = 1.7
+    targetCompatibility = 1.7
+
+    // java编译的时候缺省状态下会因为中文字符而失败
+    [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
+
+}

@@ -22,4 +22,24 @@
  * THE SOFTWARE.
  */
 
-apply from: "$rootDir/gradle/subprojects/plugins/mybatis-generator.gradle"
+dependencies {
+    compile "org.mybatis.generator:mybatis-generator-core:${generatorVersion}"
+    compile "com.alibaba:druid:${druidVersion}"
+    compile "tk.mybatis:mapper:${mapperVersion}"
+    compile "mysql:mysql-connector-java:5+"
+}
+
+pluginBundle {
+    website = "$projectLocation"
+    vcsUrl = "$projectLocation"
+    tags = ['mybatis', 'generator', 'cuisongliu', 'gradle', 'mbg']
+
+    plugins {
+        mybatisGeneratorPlugin {
+            id = 'com.cuisongliu.plugin.mybatis-generator'
+            description = 'mybatis generator gradle plugin'
+            displayName = 'mybatis generator gradle plugin'
+            version = '1.0'
+        }
+    }
+}

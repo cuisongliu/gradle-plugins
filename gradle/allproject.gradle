@@ -22,4 +22,16 @@
  * THE SOFTWARE.
  */
 
-apply from: "$rootDir/gradle/subprojects/plugins/mybatis-generator.gradle"
+def baseUrl = "http://maven.cuisongliu.com"
+def nexusUrl = "$baseUrl/content/groups/public/"
+allprojects {
+    group 'com.cuisongliu.plugin'
+    version = '1.0'
+
+    repositories {
+        mavenLocal()
+        maven { url "$nexusUrl" }
+        mavenCentral()
+        jcenter()
+    }
+}
