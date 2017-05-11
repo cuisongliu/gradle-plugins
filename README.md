@@ -1,37 +1,51 @@
-## Welcome to GitHub Pages
+[![Build Status](https://travis-ci.org/iamthechad/javadoc2dash.svg)](https://travis-ci.org/cuisongliu/gradle-plugins.svg?branch=master)
+[![Dependency Status](https://www.versioneye.com/user/projects/5913d942a786140061505272/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/5913d942a786140061505272)
+[![license](https://img.shields.io/badge/gradle-3.3-brightgreen.svg)](https://gradle.org)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/mit-license.php)
 
-You can use the [editor on GitHub](https://github.com/cuisongliu/gradle-plugins/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+- [Gradle plugin](#gradle-plugin)
+  - [MyBatis Generator Gradle Plugin(MBG)](#mbg)
+    - [Add the plugin to you project](#add-mbg-to-project)
+    - [Specify settings](#set-mbg-settings)
+    - [Run the mbg task](#run-mbg-task)
+        - [Example](#example)
+ 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+<h1 id="gradle-plugin">Gradle plugin</h1>
+ 
+This project is some gradle plugin collections.So far there are [mbg](#mbg) plugins,etc.
+[简体中文](README_ZH.md)
+## MyBatis Generator Gradle Plugin(MBG)
+This plugin is based off of  https://github.com/mybatis/generator. This is a gradle plugin of mybatisGeneratorPlugin(mbg).
+This plugin has all the  features  of mybatisGeneratorPlugin(mbg),but the plugin realization of groovy from gradle3.3. 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Add the plugin to you project
+Build script snippet for use in all Gradle versions:
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+    buildscript {
+      repositories {
+        maven {
+          url "https://plugins.gradle.org/m2/"
+        }
+      }
+      dependencies {
+        classpath "com.cuisongliu.plugin:mybatis-generator:1.0"
+      }
+    }
 
-- Bulleted
-- List
+    apply plugin: "com.cuisongliu.plugin.mybatis-generator"
+    
+Build script snippet for new, incubating, plugin mechanism introduced in Gradle 2.1:
 
-1. Numbered
-2. List
+    plugins {
+      id "com.cuisongliu.plugin.mybatis-generator" version "1.0"
+    }
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
-```
+### Specify settings
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Run the mbg task
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/cuisongliu/gradle-plugins/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+<h4 id="example">Example</h4>
