@@ -46,6 +46,85 @@ Build script snippet for new, incubating, plugin mechanism introduced in Gradle 
 
 <h3 id="set-mbg-settings">Specify settings</h3>
 
+    mbg {
+      skip = true
+      jdbc{
+        url ="xxx"
+      }
+      xml{
+        mapperMapper="xxx"
+      }
+    }
+    
+If no settings are provided, the plugin tries to use sensible defaults.
+
+<table>
+    <thead>
+    <tr>
+        <th colspan="2">Setting Name</td>
+        <th>Type</td>
+       	<th>Description</td>
+       	<th>Default</td>
+    </tr>
+    </thead>
+	<tbody>
+	<tr>
+		<td colspan="2"><code>overwrite</code></td>
+		<td><code>boolean</code></td>
+		<td>Specifies whether the mojo overwrites existing files. Default is false. </td>
+		<td><code>true</code></td>
+	</tr>
+	<tr>
+        <td colspan="2"><code>generatorFile</code></td>
+        <td><code>String</code></td>
+        <td>Location of the configuration file.</td>
+        <td><code>generatorConfig.xml</code></td>
+    </tr>
+    <tr>
+        <td colspan="2"><code>sqlScript</code></td>
+        <td><code>String</code></td>
+        <td>Location of a SQL script file to run before generating code.</td>
+        <td><code>null</code></td>
+    </tr>
+    <tr>
+        <td colspan="2"><code>consoleable</code></td>
+        <td><code>boolean</code></td>
+        <td>Specifies whether  progress messages to the console.</td>
+        <td><code>false</code></td>
+    </tr>
+    <tr>
+        <td colspan="2"><code>skip</code></td>
+        <td><code>boolean</code></td>
+        <td>Specifies whether  progress messages to the console.</td>
+        <td><code>false</code></td>
+    </tr>
+    <tr>
+        <td colspan="2"><code>contexts</code></td>
+        <td><code>String</code></td>
+        <td>Comma delimited list of contexts to generate.</td>
+        <td><code>null</code></td>
+    </tr>
+    <tr>
+        <td colspan="2"><code>tableNames</code></td>
+        <td><code>String</code></td>
+        <td>Comma delimited list of table names to generate.</td>
+        <td><code>null</code></td>
+    </tr>
+	<tr>
+		<td rowspan="2">&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+</tbody></table>
+
 <h3 id="run-mbg-task">Run the mbg task</h3>
 
 <h4 id="example">Example</h4>
