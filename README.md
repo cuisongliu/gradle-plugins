@@ -16,11 +16,11 @@
  
 This project is some gradle plugin collections.So far there are [mbg](#mbg) plugins,etc.
 [简体中文](README_ZH.md)
-## MyBatis Generator Gradle Plugin(MBG)
+<h2 id="mbg">MyBatis Generator Gradle Plugin(MBG)</h2>
 This plugin is based off of  https://github.com/mybatis/generator. This is a gradle plugin of mybatisGeneratorPlugin(mbg).
 This plugin has all the  features  of mybatisGeneratorPlugin(mbg),but the plugin realization of groovy from gradle3.3. 
 
-### Add the plugin to you project
+<h3 id="add-mbg-to-project">Add the plugin to you project</h3>
 Build script snippet for use in all Gradle versions:
 
 
@@ -44,8 +44,8 @@ Build script snippet for new, incubating, plugin mechanism introduced in Gradle 
     }
 
 
-### Specify settings
+<h3 id="set-mbg-settings">Specify settings</h3>
 
-### Run the mbg task
+<h3 id="run-mbg-task">Run the mbg task</h3>
 
 <h4 id="example">Example</h4>
