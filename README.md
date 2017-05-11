@@ -48,12 +48,21 @@
 <h3 id="set-mbg-settings">参数配置</h3>
 
     mbg {
-      skip = true
+      overwrite = false
+      consoleable = true
       jdbc{
-        url ="xxx"
+        driver = "com.mysql.jdbc.Driver"
+        url    = "jdbc:mysql://[ip]:[port]/[dbname]?useSSL=false"
+        username = "username"
+        password = "password"
       }
       xml{
-        mapperMapper="xxx"
+          resourcesProject = "src/main/java"
+          mapperPlugin = tk.mybatis.mapper.generator.MapperPlugin.class
+          mapperMapper = "com.cuisongliu.springboot.core.mapper.MyMapper"
+          mapperPackage= "com.cuisongliu.mapper"
+          modelPackage = "com.cuisongliu.entity"
+          xmlPackage =   "com.cuisongliu.mapper"
       }
     }
     
@@ -102,13 +111,13 @@
     <tr>
         <td colspan="2"><code>contexts</code></td>
         <td><code>String</code></td>
-        <td>如果指定了该参数，逗号隔开的这些context会被执行，这些指定的context必须和配置文件中 <context> 元素的 id 属性一致。</td>
+        <td>如果指定了该参数，逗号隔开的这些context会被执行。</td>
         <td><code>null</code></td>
     </tr>
     <tr>
         <td colspan="2"><code>tableNames</code></td>
         <td><code>String</code></td>
-        <td>如果指定了该参数，逗号隔开的这个表会被运行， 这些表名必须和<code>&lt;table&gt;</code> 配置中的表面完全一致。</td>
+        <td>如果指定了该参数，逗号隔开的这个表会被运行。</td>
         <td><code>null</code></td>
     </tr>
 	<tr>

@@ -47,12 +47,21 @@ Build script snippet for new, incubating, plugin mechanism introduced in Gradle 
 <h3 id="set-mbg-settings">Specify settings</h3>
 
     mbg {
-      skip = true
+      overwrite = false
+      consoleable = true
       jdbc{
-        url ="xxx"
+        driver = "com.mysql.jdbc.Driver"
+        url    = "jdbc:mysql://[ip]:[port]/[dbname]?useSSL=false"
+        username = "username"
+        password = "password"
       }
       xml{
-        mapperMapper="xxx"
+          resourcesProject = "src/main/java"
+          mapperPlugin = tk.mybatis.mapper.generator.MapperPlugin.class
+          mapperMapper = "com.cuisongliu.springboot.core.mapper.MyMapper"
+          mapperPackage= "com.cuisongliu.mapper"
+          modelPackage = "com.cuisongliu.entity"
+          xmlPackage =   "com.cuisongliu.mapper"
       }
     }
     
