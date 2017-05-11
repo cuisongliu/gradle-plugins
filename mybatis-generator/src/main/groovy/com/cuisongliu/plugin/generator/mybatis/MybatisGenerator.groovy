@@ -60,7 +60,7 @@ class MybatisGenerator extends DefaultTask {
             return;
         }
         //设置generatorConfig.xml的位置
-        generatorFile = project.file("${project.mbg.generatorFile}")
+        generatorFile = project.file(project.mbg.generatorFile)
         javaProjectFile = project.file(project.mbg.javaProject)
         resourcesProjectFile = project.file(project.mbg.resourcesProject)
         //验证
@@ -135,17 +135,6 @@ class MybatisGenerator extends DefaultTask {
             throw new FileNotFoundException(generatorFile.getAbsolutePath())
         }
 
-        if (!javaProjectFile.exists()) {
-            println("javaProject目录不存在:${javaProjectFile.getAbsolutePath()}");
-            throw new FileNotFoundException(javaProjectFile.getAbsolutePath())
-        }
-        xmlParams["javaProject"] = project.mbg.javaProject
-
-        if (!resourcesProjectFile.exists()) {
-            println("resourcesProject目录不存在:${resourcesProjectFile.getAbsolutePath()}");
-            throw new FileNotFoundException(resourcesProjectFile.getAbsolutePath())
-        }
-        xmlParams["resourcesProject"] = project.mbg.resourcesProject
         def errorMsg;
         //driver
         if (!StringUtility.stringHasValue(project.mbg.jdbc.driver)) {
@@ -178,7 +167,19 @@ class MybatisGenerator extends DefaultTask {
         }
         xmlParams["jdbc.password"] = project.mbg.jdbc.password
 
-        //plugins
+        //xml param
+        if (!javaProjectFile.exists()) {
+            println("javaProject目录不存在:${javaProjectFile.getAbsolutePath()}");
+            throw new FileNotFoundException(javaProjectFile.getAbsolutePath())
+        }
+        xmlParams["javaProject"] = project.mbg.javaProject
+
+        if (!resourcesProjectFile.exists()) {
+            println("resourcesProject目录不存在:${resourcesProjectFile.getAbsolutePath()}");
+            throw new FileNotFoundException(resourcesProjectFile.getAbsolutePath())
+        }
+        xmlParams["resourcesProject"] = project.mbg.resourcesProject
+
         Class clazzPlugin = project.mbg.xml.mapperPlugin
         if (clazzPlugin == null) {
             errorMsg = "变量mbg.xml.mapperPlugin<Class<? extends PluginAdapter>>未设置,请设置后重试."

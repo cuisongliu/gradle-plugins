@@ -36,16 +36,16 @@ import org.mybatis.generator.api.PluginAdapter
  */
 class MybatisGeneratorXmlExtension {
     /**
-     * 插件信息,xml中插件的类名,继承自<code>org.mybatis.generator.api.PluginAdapter</code><br/>
-     * 默认值为tk.mybatis.mapper.generator.MapperPlugin.class
+     * 生成java文件所在的目录<br>
+     * 默认为 src/main/java
      */
-    Class<? extends PluginAdapter> mapperPlugin = tk.mybatis.mapper.generator.MapperPlugin.class
+    String javaProject = "src/main/java"
 
     /**
-     * mapper配置,生成的Mapper方法的父类<br/>
-     * 默认值为tk.mybatis.mapper.common.Mapper
+     * 生成xml配置文件mapper所在的目录<br>
+     * 默认为 src/main/resources
      */
-    String mapperMapper = "tk.mybatis.mapper.common.Mapper"
+    String resourcesProject = "src/main/resources"
 
     /**
      * mapper配置,生成的Mapper(dao)所在的包所在的位置<br/>
@@ -64,4 +64,18 @@ class MybatisGeneratorXmlExtension {
      * 默认值为null 需要设置,否则会报错
      */
     String xmlPackage = null
+
+
+    /**
+     * 插件信息,xml中插件的类名,继承自<code>org.mybatis.generator.api.PluginAdapter</code><br/>
+     * 默认值为tk.mybatis.mapper.generator.MapperPlugin.class
+     */
+    Class<? extends PluginAdapter> mapperPlugin = tk.mybatis.mapper.generator.MapperPlugin.class
+
+    /**
+     * mapper配置,生成的Mapper类的父类<br/>
+     * 默认值为tk.mybatis.mapper.common.Mapper
+     */
+    String mapperMapper = "tk.mybatis.mapper.common.Mapper"
+
 }

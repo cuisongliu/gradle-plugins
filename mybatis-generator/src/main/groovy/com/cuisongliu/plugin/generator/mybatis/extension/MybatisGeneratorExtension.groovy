@@ -47,18 +47,6 @@ class MybatisGeneratorExtension {
     def generatorFile = "generatorConfig.xml"
 
     /**
-     * 生成java文件所在的目录<br>
-     * 默认为 src/main/java
-     */
-    String javaProject = "src/main/java"
-
-    /**
-     * 生成xml配置文件mapper所在的目录<br>
-     * 默认为 src/main/resources
-     */
-    String resourcesProject = "src/main/resources"
-
-    /**
      * 要在生成代码之前运行的 SQL 脚本文件的位置。 如果空，不会执行任何脚本。<br>
      * 如果不是空，jdbcDriver, jdbcURL 参数必须提供。 另外如果连接数据库需要认证也需要提供 jdbcUserId 和 jdbcPassword 参数。<br>
      * 值可以使一个文件系统的绝对路径或者是一个使用"classpath:"开头放在构建的类路径下的路径。
