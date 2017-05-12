@@ -70,10 +70,10 @@
 <table>
     <thead>
     <tr>
-        <th colspan="2">Setting Name</td>
-        <th>Type</td>
-       	<th>Description</td>
-       	<th>Default</td>
+        <th colspan="2">属性名</td>
+        <th>类型</td>
+       	<th>描述</td>
+       	<th>默认值</td>
     </tr>
     </thead>
 	<tbody>
@@ -123,10 +123,10 @@
 <table>
     <thead>
     <tr>
-        <th colspan="2">Setting Name</td>
-        <th>Type</td>
-        <th>Description</td>
-        <th>Default</td>
+        <th colspan="2">属性名</td>
+        <th>类型</td>
+       	<th>描述</td>
+       	<th>默认值</td>
     </tr>
     </thead>
     <tbody>
