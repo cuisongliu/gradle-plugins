@@ -119,6 +119,17 @@
         <td>如果指定了该参数，逗号隔开的这个表会被运行。</td>
         <td><code>null</code></td>
     </tr>
+</tbody></table>
+<table>
+    <thead>
+    <tr>
+        <th colspan="2">Setting Name</td>
+        <th>Type</td>
+        <th>Description</td>
+        <th>Default</td>
+    </tr>
+    </thead>
+    <tbody>
 	<tr>
 		<td rowspan="4"><code>jdbc</code></td>
 		<td><code>driver</code></td>
