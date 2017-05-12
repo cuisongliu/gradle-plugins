@@ -192,7 +192,8 @@
         <td>插件信息,xml中插件的类名.<em><strong>不能为空</td>
         <td>
             <code>tk.mybatis.mapper.
-            generator.MapperPlugin.class</code>
+            generator.MapperPlugin.
+            class</code>
         </td>
     </tr>
     <tr>
