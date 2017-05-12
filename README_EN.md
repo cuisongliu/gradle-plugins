@@ -178,13 +178,13 @@ If no settings are provided, the plugin tries to use sensible defaults.
         <td><code>mapperPlugin</code></td>
         <td><code>Class<? extends PluginAdapter></code></td>
         <td>Mybatis generator plugin class.<em><strong>Not Null</td>
-        <td><code>tk.mybatis.mapper.generator.MapperPlugin.class</code></td>
+        <td><code>tk.mybatis.mapper.<br/>generator.MapperPlugin.class</code></td>
     </tr>
     <tr>
         <td><code>mapperMapper</code></td>
         <td><code>String</code></td>
         <td>Mybatis generator javaClient  extends class.<em><strong>Not Null</td>
-        <td><code>tk.mybatis.mapper.common.Mapper</code></td>
+        <td><code>tk.mybatis.mapper.<br/>common.Mapper</code></td>
     </tr>
 </tbody></table>
 
