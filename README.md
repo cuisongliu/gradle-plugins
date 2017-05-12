@@ -264,3 +264,18 @@
    
 2. 在build.gradle中加入[参数配置](#set-mbg-settings)
 3. 在build.gradle所在目录执行 ```gradle mbg ```
+4. 默认支持mysql,若使用oracle或者其他的数据库需要额外增加如下配置
+    ```
+        buildscript{
+            def baseUrl = "http://maven.cuisongliu.com"
+            def nexusUrl = "$baseUrl/content/groups/public/"
+            repositories {
+                mavenLocal()
+                maven { url "$nexusUrl" }
+            }
+            dependencies {
+                classpath "com.oracle:ojdbc6:11.1.0.7.0"
+            }
+        }
+    ```
+    在使用插件之前加入buildscript,配置classpath的driver依赖jar包(这里的maven地址根据情况修改)
