@@ -191,9 +191,9 @@
         <td><code>Class<? extends PluginAdapter></code></td>
         <td>插件信息,xml中插件的类名.<em><strong>不能为空</td>
         <td>
-            <code>tk.mybatis.mapper.
-            generator.MapperPlugin.
-            class</code>
+            <code>tk.mybatis.mapper.</code>
+            <code>generator.MapperPlugin.</code>
+            <code>class</code>
         </td>
     </tr>
     <tr>
@@ -201,8 +201,8 @@
         <td><code>String</code></td>
         <td>mapper配置,生成的Mapper方法的父类.<em><strong>不能为空</td>
         <td>
-            <code>tk.mybatis.mapper.
-            common.Mapper</code>
+            <code>tk.mybatis.mapper.</code>
+            <code>common.Mapper</code>
         </td>
     </tr>
 </tbody></table>
