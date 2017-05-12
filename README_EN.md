@@ -118,6 +118,17 @@ If no settings are provided, the plugin tries to use sensible defaults.
         <td>Comma delimited list of table names to generate.</td>
         <td><code>null</code></td>
     </tr>
+    </tbody></table>
+    <table>
+        <thead>
+        <tr>
+            <th colspan="2">Setting Name</td>
+            <th>Type</td>
+            <th>Description</td>
+            <th>Default</td>
+        </tr>
+    </thead>
+    <tbody>
 	<tr>
 		<td rowspan="4"><code>jdbc</code></td>
 		<td><code>driver</code></td>
@@ -178,13 +189,13 @@ If no settings are provided, the plugin tries to use sensible defaults.
         <td><code>mapperPlugin</code></td>
         <td><code>Class<? extends PluginAdapter></code></td>
         <td>Mybatis generator plugin class.<em><strong>Not Null</td>
-        <td><code>tk.mybatis.mapper.<br/>generator.MapperPlugin.class</code></td>
+        <td><code>tk.mybatis.mapper.</code><code>generator.MapperPlugin.class</code></td>
     </tr>
     <tr>
         <td><code>mapperMapper</code></td>
         <td><code>String</code></td>
         <td>Mybatis generator javaClient  extends class.<em><strong>Not Null</td>
-        <td><code>tk.mybatis.mapper.<br/>common.Mapper</code></td>
+        <td><code>tk.mybatis.mapper.</code><code>common.Mapper</code></td>
     </tr>
 </tbody></table>
 
