@@ -53,9 +53,15 @@ def pomConfig = {
     }
     licenses {
         license {
-            name "MIT License"
+            name "The MIT License (MIT)"
             url "https://opensource.org/licenses/mit-license.php"
             distribution "repo"
+        }
+    }
+    developers{
+        developer{
+            name "cuisongliu"
+            email "cuisongliu@qq.com"
         }
     }
 }
