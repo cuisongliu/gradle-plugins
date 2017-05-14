@@ -39,6 +39,7 @@
     apply plugin: "com.cuisongliu.plugin.mybatis-generator"
     
 为Gradle 2.1中引入的新的，潜在的插件机制构建脚本代码段
+
     plugins {
       id "com.cuisongliu.plugin.mybatis-generator" version "1.0"
     }
